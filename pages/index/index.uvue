@@ -1,15 +1,26 @@
 <template>
-	<view class="content">
-		<text class="title">{{title}}</text>
-	</view>
+  <view class="content">
+    <text class="title">{{ title }}</text>
+    <button @click="navigateToProgram">navigateTo program</button>
+  </view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		}
-	}
+export default {
+  data() {
+    return {
+      title: 'Hello',
+    };
+  },
+  methods: {
+    navigateToProgram() {
+      uni.navigateTo({
+        url: '/pages/program/index',
+        complete(res){
+          console.log('navigateTo complete', res)
+        }
+      });
+    },
+  },
+};
 </script>

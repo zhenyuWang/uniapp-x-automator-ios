@@ -1,25 +1,57 @@
 {
-	"pages": [
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app x"
-			}
-		},
-		{
-			"path" : "pages/page/page",
-			"style" : 
-			{
-				"navigationBarTitleText" : "",
-				"enablePullDownRefresh" : false
-			}
-		}
-	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app x",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	},
-	"uniIdRouter": {}
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "index"
+      }
+    },
+    {
+      "path": "pages/program/index",
+      "style": {
+        "navigationBarTitleText": "program"
+      }
+    },
+    {
+      "path": "pages/page/index",
+      "style": {
+        "navigationBarTitleText": "page"
+      }
+    },
+    {
+      "path": "pages/tabBar/first",
+      "style": {
+        "navigationBarTitleText": "tabBar first"
+      }
+    },
+    {
+      "path": "pages/tabBar/second",
+      "style": {
+        "navigationBarTitleText": "tabBar second"
+      }
+    }
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "iconPath": "static/logo.png",
+        "selectedIconPath": "static/logo.png",
+        "text": "first",
+        "pagePath": "pages/tabBar/first"
+      },
+      {
+        "iconPath": "static/logo.png",
+        "selectedIconPath": "static/logo.png",
+        "text": "second",
+        "pagePath": "pages/tabBar/second"
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app x",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "uniIdRouter": {}
 }
