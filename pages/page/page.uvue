@@ -1,0 +1,52 @@
+<template>
+	<!-- #ifdef APP -->
+	<scroll-view style="flex:1" ref="page" id="page">
+	<!-- #endif -->
+		<text>打篮球</text>
+		<view>这是一个page页面</view>
+		<view class="name">小王</view>
+		<view id="age" class="age">18</view>
+		<view class="fruit" v-for="(item, index) in fruit" :key="index">{{ item }}</view>
+		<view id="fruit" v-for="(item, index) in fruit" :key="index">{{ item }}</view>
+		<button style="background: red; padding: 30px 	;color: yellow;" v-for="(item, index) in fruit" :key="index">
+			{{ item }}
+		</button>
+		<view class="delay-view" v-if="showDelay">这个内容延迟展示</view>
+		<view style="height: 1000px; width: 100%; background: yellow;">凑高度</view>
+	<!-- #ifdef APP -->
+	</scroll-view>
+	<!-- #endif -->
+</template>
+
+<script lang="uts">
+	export default {
+		data() {
+			return {
+				fruit: [
+					'苹果',
+					'橘子',
+					'香蕉'
+				],
+				showDelay: false
+			}
+		},
+		mounted() {
+			// const dom = uni.getElementById('page')
+			// console.log(dom)
+			// console.log('scrollWidth', dom?.scrollWidth)
+			// console.log('scrollHeight', dom?.scrollHeight)
+			setTimeout(() => {
+				this.showDelay = true;
+			}, 3000)
+		},
+		methods: {
+			changeDelay(value: boolean) {
+				this.showDelay = value;
+			}
+		}
+	}
+</script>
+
+<style>
+
+</style>
