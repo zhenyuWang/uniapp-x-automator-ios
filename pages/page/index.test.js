@@ -59,13 +59,12 @@ describe(pageUrl, () => {
 	})
 
 	it('测试waitFor', async () => {
-		console.log(`before time:	${ new Date().getTime() }`);
+		const beforeTime = Date.now();
 		await page.waitFor(2000);
-		console.log(`after time: ${ new Date().getTime() }`)
+		expect(Date.now() - beforeTime).toBeGreaterThanOrEqual(2000);
 		await page.waitFor('.delay-view');
 		const element = await page.$('.delay-view')
-		console.log(`last time: ${ new Date().getTime() }`)
-		expect(await element.text()).toEqual('这个内容延迟展示')
+		expect(await element.text()).toEqual('这个内容延迟展示');
 	})
 
 	it('测试waitFor函数', async () => {
@@ -86,13 +85,13 @@ describe(pageUrl, () => {
 		expect(fruit).toEqual(['龙眼'])
 	})
 
-	// TODO: 
+	// TODO: 由于scroll-view组件的scrollWidth和scrollHeight是0，等框架修复后再测试
 	it('测试获取页面大小 page.size', async () => {
 		const pageSize = await page.size()
 		console.log(pageSize);
 	})
 
-	// TODO: 
+	// TODO: 由于scroll-view组件的scrollTop是0，等框架修复后再测试
 	it('测试获取页面的滚动位置', async () => {
 		// await program.pageScrollTo(30)		
 		const scrollTop = await page.scrollTop()

@@ -31,10 +31,6 @@
 			}
 		},
 		mounted() {
-			// const dom = uni.getElementById('page')
-			// console.log(dom)
-			// console.log('scrollWidth', dom?.scrollWidth)
-			// console.log('scrollHeight', dom?.scrollHeight)
 			setTimeout(() => {
 				this.showDelay = true;
 			}, 3000)
