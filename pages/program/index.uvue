@@ -1,5 +1,7 @@
 <template>
+  <!-- #ifdef APP -->
   <scroll-view class="px-20" style="flex: 1;">
+  <!-- #endif -->
     <view class="content">
       <button class="uni-mt-20" @click="navigateTo">navigateTo index</button>
       <button class="uni-mt-20" @click="redirectTo">redirectTo index</button>
@@ -8,59 +10,61 @@
       <button class="uni-mt-20" @click="reLaunch">reLaunch index</button>
       <button class="uni-mt-20" @click="pageScrollTo">pageScrollTo</button>
     </view>
+  <!-- #ifdef APP -->
   </scroll-view>
+  <!-- #endif -->
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      title: 'Hello',
-    };
-  },
-  methods: {
-    navigateTo() {
-      uni.navigateTo({
-        url: '/pages/index/index',
-      });
+  export default {
+    data() {
+      return {
+        title: 'Hello',
+      };
     },
-    redirectTo() {
-      uni.redirectTo({
-        url: '/pages/index/index',
-      });
+    methods: {
+      navigateTo() {
+        uni.navigateTo({
+          url: '/pages/index/index',
+        });
+      },
+      redirectTo() {
+        uni.redirectTo({
+          url: '/pages/index/index',
+        });
+      },
+      switchTab() {
+        uni.switchTab({
+          url: '/pages/tabBar/first',
+        });
+      },
+      navigateBack() {
+        uni.navigateBack();
+      },
+      reLaunch() {
+        uni.reLaunch({
+          url: '/pages/index/index',
+        });
+      },
+      pageScrollTo() {
+        // 暂未支持
+        uni.pageScrollTo({
+          offsetTop: 20,
+          success() {
+            console.log('pageScroll success')
+          },
+          fail(err) {
+            console.log('pageScroll fail', err)
+          }
+        })
+      },
     },
-    switchTab() {
-      uni.switchTab({
-        url: '/pages/tabBar/first',
-      });
-    },
-    navigateBack() {
-      uni.navigateBack();
-    },
-    reLaunch() {
-      uni.reLaunch({
-        url: '/pages/index/index',
-      });
-    },
-    pageScrollTo(){
-      // 暂未支持
-      uni.pageScrollTo({
-        offsetTop:20,
-        success(){
-          console.log('pageScroll success')
-        },
-        fail(err){
-          console.log('pageScroll fail', err)
-        }
-      })
-    },
-  },
-};
+  };
 </script>
 
 
 <style>
-  .content{
+  .content {
     height: 2000px;
   }
 </style>

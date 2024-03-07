@@ -1,6 +1,5 @@
-// uni-app自动化测试教程: https://uniapp.dcloud.net.cn/worktile/auto/hbuilderx-extension/
 let page;
-const pageUrl = '/pages/page/page';
+const pageUrl = '/pages/page/index';
 describe(pageUrl, () => {
 
 	beforeAll(async () => {
@@ -8,7 +7,7 @@ describe(pageUrl, () => {
 	})
 
 	it('测试page.path', async () => {
-		expect(page.path).toEqual('pages/page/page')
+		expect(page.path).toEqual(pageUrl.substring(1))
 	})
 
 	it('测试page.query', async () => {

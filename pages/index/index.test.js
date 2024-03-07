@@ -1,12 +1,12 @@
-describe('/pages/index/index', () => {
+describe('basic', () => {
   let page
   
   beforeAll(async () => {
-    page = await program.currentPage()
+    page = await program.reLaunch('/pages/index/index')
     await page.waitFor(1000)
   });
   
-  it('page get element', async () => {
+  it('Page.$', async () => {
     const title = await page.$('.title')
     expect(await title.text()).toBe('Hello')
   })
