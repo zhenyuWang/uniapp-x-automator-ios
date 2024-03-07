@@ -1,7 +1,7 @@
 <template>
-  <view class="content">
+  <view class="content px-20">
     <text class="title">{{ title }}</text>
-    <button @click="navigateToProgram">navigateTo program</button>
+    <button class="uni-mt-20" @click="navigateToProgram">navigateTo program</button>
   </view>
 </template>
 

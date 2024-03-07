@@ -1,13 +1,14 @@
 <template>
-  <view class="content">
-    <text class="title">{{ title }}</text>
-    <button @click="navigateTo">navigateTo index</button>
-    <button @click="redirectTo">redirectTo index</button>
-    <button @click="switchTab">switchTab tabBar</button>
-    <button @click="navigateBack">navigateBack</button>
-    <button @click="reLaunch">reLaunch index</button>
-    <button @click="test">test test</button>
-  </view>
+  <scroll-view class="px-20" style="flex: 1;">
+    <view class="content">
+      <button class="uni-mt-20" @click="navigateTo">navigateTo index</button>
+      <button class="uni-mt-20" @click="redirectTo">redirectTo index</button>
+      <button class="uni-mt-20" @click="switchTab">switchTab tabBar</button>
+      <button class="uni-mt-20" @click="navigateBack">navigateBack</button>
+      <button class="uni-mt-20" @click="reLaunch">reLaunch index</button>
+      <button class="uni-mt-20" @click="pageScrollTo">pageScrollTo</button>
+    </view>
+  </scroll-view>
 </template>
 
 <script>
@@ -18,12 +19,6 @@ export default {
     };
   },
   methods: {
-    test(){
-      console.log('this.$appPage', this.$appPage)
-      this.$appPage?.close(new Map(), () => {
-        console.log('program page closed')
-      })
-    },
     navigateTo() {
       uni.navigateTo({
         url: '/pages/index/index',
@@ -47,6 +42,25 @@ export default {
         url: '/pages/index/index',
       });
     },
+    pageScrollTo(){
+      // 暂未支持
+      uni.pageScrollTo({
+        offsetTop:20,
+        success(){
+          console.log('pageScroll success')
+        },
+        fail(err){
+          console.log('pageScroll fail', err)
+        }
+      })
+    },
   },
 };
 </script>
+
+
+<style>
+  .content{
+    height: 2000px;
+  }
+</style>

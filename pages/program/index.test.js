@@ -52,8 +52,9 @@ describe('测试 program API', () => {
       expect(value.length).toBeGreaterThan(0);
     }
   })
-
+  
   // it('pageScrollTo', async () => {
+    // ios 暂未支持该 API
   //   await program.pageScrollTo(20)
   //   console.log(await page.scrollTop())
   // })
@@ -68,6 +69,7 @@ describe('测试 program API', () => {
   })
 
   // it('screenshot', async () => {
+    // ios 暂未支持截图 API
   //   const image = await program.screenshot();
   //   expect(image).toMatchImageSnapshot();
   // })
