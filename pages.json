@@ -19,6 +19,12 @@
       }
     },
     {
+      "path": "pages/element/index",
+      "style": {
+        "navigationBarTitleText": "element"
+      }
+    },
+    {
       "path": "pages/tabBar/first",
       "style": {
         "navigationBarTitleText": "tabBar first"

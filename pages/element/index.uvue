@@ -1,0 +1,32 @@
+<template>
+  <!-- #ifdef APP -->
+  <scroll-view style="flex:1" ref="page" id="page">
+  <!-- #endif -->
+    <view class="text-container">
+      <text class="my-text">this is text 1</text>
+      <text class="my-text">this is text 2</text>
+    </view>
+  <!-- #ifdef APP -->
+  </scroll-view>
+  <!-- #endif -->
+</template>
+
+<script lang="uts">
+  export default {
+    data() {
+      return {
+
+      }
+    },
+    mounted() {
+
+    },
+    methods: {
+
+    }
+  }
+</script>
+
+<style>
+
+</style>
