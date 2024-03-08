@@ -1,0 +1,26 @@
+<template>
+	<view>
+		<sub-component id="sub-component" class="sub-component"></sub-component>
+	</view>
+</template>
+
+<script>
+	import SubComponent from './subComponent.uvue'
+	export default {
+		components: {
+			SubComponent
+		},
+		data() {
+			return {
+				
+			}
+		},
+		methods: {
+			
+		}
+	}
+</script>
+
+<style>
+
+</style>

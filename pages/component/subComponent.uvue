@@ -1,0 +1,23 @@
+<template>
+	<view>
+		<view class="text">this is sub component</view>
+		{{ text }}
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				text: 'hello world'
+			}
+		},
+		methods: {
+			
+		}
+	}
+</script>
+
+<style>
+
+</style>
