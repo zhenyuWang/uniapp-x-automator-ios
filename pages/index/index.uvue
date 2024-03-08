@@ -2,6 +2,8 @@
   <view class="content px-20">
     <text class="title">{{ title }}</text>
     <button class="uni-mt-20" @click="navigateToProgram">navigateTo program</button>
+    <button class="uni-mt-20" @click="navigateToPage">navigateTo page</button>
+    <button class="uni-mt-20" @click="navigateToElement">navigateTo element</button>
   </view>
 </template>
 
@@ -16,9 +18,16 @@ export default {
     navigateToProgram() {
       uni.navigateTo({
         url: '/pages/program/index',
-        complete(res){
-          console.log('navigateTo complete', res)
-        }
+      });
+    },
+    navigateToPage() {
+      uni.navigateTo({
+        url: '/pages/page/index',
+      });
+    },
+    navigateToElement() {
+      uni.navigateTo({
+        url: '/pages/element/index',
       });
     },
   },

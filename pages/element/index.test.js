@@ -37,4 +37,29 @@ describe('Element API', () => {
     expect(await fooTextList[0].text()).toBe('this is foo text 1')
     expect(await fooTextList[1].text()).toBe('this is foo text 2')
   })
+  
+  it('size', async () => {
+    const textContainer = await page.$('.text-container')
+    const textContainerSize = await textContainer.size()
+    expect(textContainerSize.width).toBe(200)
+    expect(textContainerSize.height).toBe(50)
+  })
+  
+  it('offset', async () => {
+    const testOffsetEl = await page.$('.test-offset')
+    const testOffsetElOffset = await testOffsetEl.offset()
+    expect(testOffsetElOffset.left).toBe(10)
+    expect(testOffsetElOffset.top).toBe(10)
+    
+    const textContainer = await page.$('.text-container')
+    const textContainerOffset = await textContainer.offset()
+    expect(textContainerOffset.left).toBe(0)
+    expect(textContainerOffset.top).toBe(0)
+  })
+  
+  it('text', async () => {
+    const myTextEl = await page.$('.my-text')
+    const myTextElText = await myTextEl.text()
+    expect(myTextElText).toBe('this is text 1')
+  })
 });

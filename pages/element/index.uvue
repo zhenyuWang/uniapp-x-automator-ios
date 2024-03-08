@@ -7,6 +7,7 @@
       <text class="my-text">this is text 2</text>
     </view>
     <Foo class="component-foo" />
+    <view class="test-offset"></view>
   <!-- #ifdef APP -->
   </scroll-view>
   <!-- #endif -->
@@ -14,23 +15,21 @@
 
 <script lang="uts">
   import Foo from './Foo.uvue'
-  
+
   export default {
-    components: {Foo},
-    data() {
-      return {
-
-      }
-    },
-    mounted() {
-
-    },
-    methods: {
-
-    }
+    components: { Foo },
   }
 </script>
 
 <style>
+  .text-container {
+    width: 200px;
+    height: 50px;
+  }
 
+  .test-offset {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
 </style>
