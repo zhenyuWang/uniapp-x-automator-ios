@@ -1,7 +1,10 @@
 <template>
 	<view>
+		<view class="title">{{ text }}</view>
 		<view class="text">this is sub component</view>
-		{{ text }}
+		<view class="num-list">
+			<view class="num-list-item" v-for="(item, index) in nums"> {{ item }} </view>
+		</view>
 	</view>
 </template>
 
@@ -9,15 +12,42 @@
 	export default {
 		data() {
 			return {
-				text: 'hello world'
+				text: 'hello world',
+				nums: [1, 2, 3, 4]
 			}
 		},
 		methods: {
-			
+			addNum(num) {
+				this.nums.push(!isNaN(num) ? num : (this.nums.length + 1));
+			},
+			deleteNum() {
+				this.nums.pop()
+			}
 		}
 	}
 </script>
 
 <style>
+	.title {
+		text-align: center;
+		padding: 20rpx;
+		font-size: 40rpx;
+		width: 100%;
+	}
 
+	.text {
+		color: #999;
+		font-size: 28rpx;
+		text-align: center;
+	}
+
+	.num-list-item {
+		width: 100rpx;
+		height: 100rpx;
+		background: red;
+		margin-top: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 </style>

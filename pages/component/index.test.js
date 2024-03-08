@@ -29,5 +29,23 @@ describe(pageUrl, () => {
 		})
 		expect(await element.data('text')).toBe('hello world 2024')
 	})
-
+	
+	it('callMethod', async () => {
+		const element = await page.$('.sub-component')
+		await element.callMethod('addNum')
+		expect(JSON.stringify(await element.data('nums'))).toBe('[1,2,3,4,5]')
+	})
+	
+	it('callMethod with params', async () => {
+		const element = await page.$('.sub-component')
+		await element.callMethod('addNum', 8)
+		expect(JSON.stringify(await element.data('nums'))).toBe('[1,2,3,4,5,8]')
+	})
+	
+	it('callMethod again', async () => {
+		const element = await page.$('.sub-component')
+		await element.callMethod('deleteNum')
+		expect(JSON.stringify(await element.data('nums'))).toBe('[1,2,3,4,5]')
+	})
+	
 })
