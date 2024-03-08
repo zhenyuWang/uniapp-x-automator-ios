@@ -1,10 +1,10 @@
 <script lang="uts">
 	export default {
 		onLaunch: function () {
-			console.log('App Launch1')
+			console.log('App Launch')
 		},
 		onShow: function () {
-			console.log('App Show2')
+			console.log('App Show')
 		},
 		onHide: function () {
 			console.log('App Hide')

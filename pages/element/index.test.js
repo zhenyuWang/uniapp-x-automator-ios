@@ -18,6 +18,10 @@ describe('Element API', () => {
     const textContainer = await page.$('.text-container')
     const textEl = await textContainer.$('.my-text')
     expect(await textEl.text()).toBe('this is text 1')
+    
+    const componentFoo = await page.$('.component-foo')
+    const fooText = await componentFoo.$('.foo-text')
+    expect(await fooText.text()).toBe('this is foo text 1')
   })
   
   it('$$', async () => {
@@ -26,5 +30,11 @@ describe('Element API', () => {
     expect(textElList.length).toBe(2)
     expect(await textElList[0].text()).toBe('this is text 1')
     expect(await textElList[1].text()).toBe('this is text 2')
+    
+    const componentFoo = await page.$('.component-foo')
+    const fooTextList = await componentFoo.$$('.foo-text')
+    expect(fooTextList.length).toBe(2)
+    expect(await fooTextList[0].text()).toBe('this is foo text 1')
+    expect(await fooTextList[1].text()).toBe('this is foo text 2')
   })
 });

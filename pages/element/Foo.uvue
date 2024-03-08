@@ -1,0 +1,6 @@
+<template>
+    <view>
+      <text class="foo-text">this is foo text 1</text>
+      <text class="foo-text">this is foo text 2</text>
+    </view>
+</template>
