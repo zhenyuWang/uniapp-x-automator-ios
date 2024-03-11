@@ -3,7 +3,7 @@
   <scroll-view style="flex:1" ref="page" id="page">
   <!-- #endif -->
     <view class="text-container">
-      <text class="my-text">this is text 11</text>
+      <text class="my-text">this is text 1</text>
       <text class="my-text">this is text 2</text>
     </view>
     <text id="my-id-text">this is id text</text>

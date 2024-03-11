@@ -90,4 +90,14 @@ describe('Element API', () => {
     const numberInputValue = await numberInput.property('value')
     expect(numberInputValue).toBe(100)
   })
+  
+  it('value', async () => {
+    const textInput = await page.$('.text-input')
+    const textInputValue = await textInput.value()
+    expect(textInputValue).toBe('text input')
+    
+    const numberInput = await page.$('#number-input')
+    const numberInputValue = await numberInput.value()
+    expect(numberInputValue).toBe(100)
+  })
 });
