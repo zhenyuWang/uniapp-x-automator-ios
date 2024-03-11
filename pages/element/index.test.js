@@ -103,11 +103,22 @@ describe('Element API', () => {
 
   it('style', async () => {
     const textContainer = await page.$('.text-container')
-    
+
     const width = await textContainer.style('width')
     expect(width).toBe('200px')
-    
+
     const backgroundColor = await textContainer.style('backgroundColor')
     expect(backgroundColor).toBe('red')
+  })
+
+  it('tap', async () => {
+    let num = await page.data('num')
+    expect(num).toBe(0)
+
+    const incrementBtn = await page.$('#increment-btn')
+    await incrementBtn.tap()
+
+    num = await page.data('num')
+    expect(num).toBe(1)
   })
 });

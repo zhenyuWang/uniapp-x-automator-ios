@@ -12,6 +12,7 @@
     <image class="logo" src="../../static/logo.png"></image>
     <input class="text-input" type="text" value="text input" />
     <input id="number-input" type="number" :value="100" />
+    <text id="increment-btn" @click="increment">{{num}}</text>
   <!-- #ifdef APP -->
   </scroll-view>
   <!-- #endif -->
@@ -22,6 +23,16 @@
 
   export default {
     components: { Foo },
+    data() {
+      return {
+        num: 0,
+      }
+    },
+    methods: {
+      increment() {
+        this.num++
+      }
+    }
   }
 </script>
 
