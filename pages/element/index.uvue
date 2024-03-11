@@ -2,7 +2,7 @@
   <!-- #ifdef APP -->
   <scroll-view style="flex:1" ref="page" id="page">
   <!-- #endif -->
-    <view class="text-container">
+    <view style="background-color: red;" class="text-container">
       <text class="my-text">this is text 1</text>
       <text class="my-text">this is text 2</text>
     </view>
