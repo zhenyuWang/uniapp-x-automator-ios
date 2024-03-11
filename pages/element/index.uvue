@@ -13,6 +13,8 @@
     <input class="text-input" type="text" value="text input" />
     <input id="number-input" type="number" :value="100" />
     <text id="increment-btn" @click="increment">{{num}}</text>
+    <view class="view-for-touch-event" @touchstart="onTouchstart" @touchmove="onTouchmove"
+      @touchend="onTouchend" @longpress="onLongpress"></view>
   <!-- #ifdef APP -->
   </scroll-view>
   <!-- #endif -->
@@ -26,12 +28,32 @@
     data() {
       return {
         num: 0,
+        longpressed: false,
+        touchstarted: false,
+        touchmoved: false,
+        touchended: false,
       }
     },
     methods: {
       increment() {
         this.num++
-      }
+      },
+      onLongpress() {
+        console.log('onLongpress')
+        this.longpressed = true
+      },
+      onTouchstart() {
+        console.log('onTouchstart')
+        this.touchstarted = true
+      },
+      onTouchmove() {
+        console.log('onTouchmove')
+        this.touchmoved = true
+      },
+      onTouchend() {
+        console.log('onTouchend')
+        this.touchended = true
+      },
     }
   }
 </script>
@@ -51,5 +73,11 @@
   .logo {
     width: 100px;
     height: 100px;
+  }
+
+  .view-for-touch-event {
+    width: 300px;
+    height: 100px;
+    background-color: aqua;
   }
 </style>

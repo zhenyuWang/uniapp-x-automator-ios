@@ -88,7 +88,7 @@ describe('Element API', () => {
 
     const numberInput = await page.$('#number-input')
     const numberInputValue = await numberInput.property('value')
-    expect(numberInputValue).toBe(100)
+    expect(numberInputValue).toBe('100')
   })
 
   it('value', async () => {
@@ -98,7 +98,7 @@ describe('Element API', () => {
 
     const numberInput = await page.$('#number-input')
     const numberInputValue = await numberInput.value()
-    expect(numberInputValue).toBe(100)
+    expect(numberInputValue).toBe('100')
   })
 
   it('style', async () => {
@@ -120,5 +120,74 @@ describe('Element API', () => {
 
     num = await page.data('num')
     expect(num).toBe(1)
+  })
+
+  it('longpress', async () => {
+    const viewForTouchEvent = await page.$('.view-for-touch-event')
+
+    await viewForTouchEvent.longpress()
+
+    const longpressed = await page.data('longpressed')
+    expect(longpressed).toBe(true)
+  })
+
+  it('touchstart', async () => {
+    const viewForTouchEvent = await page.$('.view-for-touch-event')
+
+    await viewForTouchEvent.touchstart({
+      touches: [{
+        identifier: 1,
+        pageX: 500,
+        pageY: 500
+      }],
+      changedTouches: [{
+        identifier: 1,
+        pageX: 500,
+        pageY: 500
+      }]
+    })
+
+    const touchstarted = await page.data('touchstarted')
+    expect(touchstarted).toBe(true)
+  })
+
+  it('touchmove', async () => {
+    const viewForTouchEvent = await page.$('.view-for-touch-event')
+
+    await viewForTouchEvent.touchmove({
+      touches: [{
+        identifier: 1,
+        pageX: 500,
+        pageY: 500
+      }],
+      changedTouches: [{
+        identifier: 1,
+        pageX: 501,
+        pageY: 500
+      }]
+    })
+
+    const touchmoved = await page.data('touchmoved')
+    expect(touchmoved).toBe(true)
+  })
+
+  it('touchend', async () => {
+    const viewForTouchEvent = await page.$('.view-for-touch-event')
+
+    await viewForTouchEvent.touchend({
+      touches: [{
+        identifier: 1,
+        pageX: 500,
+        pageY: 500
+      }],
+      changedTouches: [{
+        identifier: 1,
+        pageX: 500,
+        pageY: 500
+      }]
+    })
+
+    const touchended = await page.data('touchended')
+    expect(touchended).toBe(true)
   })
 });
