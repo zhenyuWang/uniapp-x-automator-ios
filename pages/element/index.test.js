@@ -16,8 +16,12 @@ describe('Element API', () => {
   
   it('$', async () => {
     const textContainer = await page.$('.text-container')
+    
     const textEl = await textContainer.$('.my-text')
     expect(await textEl.text()).toBe('this is text 1')
+    
+    const idTextEl = await page.$('#my-id-text')
+    expect(await idTextEl.text()).toBe('this is id text')
     
     const componentFoo = await page.$('.component-foo')
     const fooText = await componentFoo.$('.foo-text')
@@ -61,5 +65,29 @@ describe('Element API', () => {
     const myTextEl = await page.$('.my-text')
     const myTextElText = await myTextEl.text()
     expect(myTextElText).toBe('this is text 1')
+  })
+  
+  it('attribute', async () => {
+    const logo = await page.$('.logo')
+    const logoSrc = await logo.attribute('src')
+    expect(logoSrc).toBe('/static/logo.png')
+    
+    const textInput = await page.$('.text-input')
+    const textInputType = await textInput.attribute('type')
+    expect(textInputType).toBe('text')
+    
+    const numberInput = await page.$('#number-input')
+    const numberInputType = await numberInput.attribute('type')
+    expect(numberInputType).toBe('number')
+  })
+  
+  it('property', async () => {
+    const textInput = await page.$('.text-input')
+    const textInputValue = await textInput.property('value')
+    expect(textInputValue).toBe('text input')
+    
+    const numberInput = await page.$('#number-input')
+    const numberInputValue = await numberInput.property('value')
+    expect(numberInputValue).toBe(100)
   })
 });
