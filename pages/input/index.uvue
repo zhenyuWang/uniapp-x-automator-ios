@@ -1,7 +1,7 @@
 <template>
 	<view>
-		<input placeholder="请输入内容" id="input" :value="inputValue"/>
-		<textarea placeholder="请输入内容" id="textarea" v-model="textareaValue"/>
+		<input placeholder="请输入内容" id="input" v-model="inputValue" />
+		<textarea placeholder="请输入内容" id="textarea" v-model="textareaValue" />
 	</view>
 </template>
 
@@ -14,7 +14,6 @@
 			}
 		},
 		methods: {
-			
 		}
 	}
 </script>

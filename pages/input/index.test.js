@@ -12,6 +12,7 @@ describe(pageUrl, () => {
 	  expect(await element.value()).toEqual('init value');
 		await element.input('first edit')
 		expect(await element.value()).toEqual('first edit');
+		expect(await page.data('inputValue')).toEqual('first edit');
 	})
 	
 	it('textarea input', async () => {
