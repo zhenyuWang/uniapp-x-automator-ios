@@ -53,6 +53,12 @@
 		  "style": {
 		    "navigationBarTitleText": "input"
 		  }
+		},
+		{
+		  "path": "pages/swiper/index",
+		  "style": {
+		    "navigationBarTitleText": "swiper"
+		  }
 		}
   ],
   "tabBar": {
