@@ -47,9 +47,8 @@
         });
       },
       pageScrollTo() {
-        // 暂未支持
         uni.pageScrollTo({
-          offsetTop: 20,
+          scrollTop: 100,
           success() {
             console.log('pageScroll success')
           },

@@ -53,11 +53,10 @@ describe('测试 program API', () => {
     }
   })
   
-  // it('pageScrollTo', async () => {
-    // ios 暂未支持该 API
-  //   await program.pageScrollTo(20)
-  //   console.log(await page.scrollTop())
-  // })
+  it('pageScrollTo', async () => {
+    await program.pageScrollTo(20)
+    expect(await page.scrollTop()).toBe(20)
+  })
 
   it('callUniMethod', async () => {
     const data = 'test data'
@@ -68,9 +67,8 @@ describe('测试 program API', () => {
     expect(await program.callUniMethod('getStorageSync', 'test')).toBe(data)
   })
 
-  // it('screenshot', async () => {
-    // ios 暂未支持截图 API
-  //   const image = await program.screenshot();
-  //   expect(image).toMatchImageSnapshot();
-  // })
+  it('screenshot', async () => {
+    const image = await program.screenshot();
+    expect(image).toMatchImageSnapshot();
+  })
 });
