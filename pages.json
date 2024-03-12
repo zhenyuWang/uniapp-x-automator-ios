@@ -41,6 +41,12 @@
 		  "style": {
 		    "navigationBarTitleText": "component"
 		  }
+		},
+		{
+		  "path": "pages/scroll-view/index",
+		  "style": {
+		    "navigationBarTitleText": "component"
+		  }
 		}
   ],
   "tabBar": {
