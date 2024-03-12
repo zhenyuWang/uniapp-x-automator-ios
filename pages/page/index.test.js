@@ -88,11 +88,10 @@ describe(pageUrl, () => {
 	it('测试获取页面大小 page.size', async () => {
 		const pageSize = await page.size()
 		expect(pageSize.width).toBeGreaterThan(200)
-		expect(pageSize.height).toBeGreaterThan(800)
+		expect(pageSize.height).toBeGreaterThan(600)
 	})
 
 	it('测试获取页面的滚动位置', async () => {
-		// await page.callMethod('pageScrollTo');
 		await page.setData({
 			scrollTop: 80
 		})

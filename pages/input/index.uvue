@@ -1,0 +1,24 @@
+<template>
+	<view>
+		<input placeholder="请输入内容" id="input" :value="inputValue"/>
+		<textarea placeholder="请输入内容" id="textarea" v-model="textareaValue"/>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				inputValue: 'init value',
+				textareaValue: 'textarea init value'
+			}
+		},
+		methods: {
+			
+		}
+	}
+</script>
+
+<style>
+
+</style>
