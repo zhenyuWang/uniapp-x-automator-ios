@@ -1,6 +1,6 @@
 <template>
 	<!-- #ifdef APP -->
-	<scroll-view style="flex:1" ref="page" id="page">
+	<scroll-view style="flex:1" ref="page" id="page" :scroll-top="scrollTop">
 	<!-- #endif -->
 		<text>打篮球</text>
 		<view>这是一个page页面</view>
@@ -27,7 +27,8 @@
 					'橘子',
 					'香蕉'
 				],
-				showDelay: false
+				showDelay: false,
+				scrollTop: 0
 			}
 		},
 		mounted() {

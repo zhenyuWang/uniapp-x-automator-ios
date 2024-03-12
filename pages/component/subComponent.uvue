@@ -3,7 +3,7 @@
 		<view class="title">{{ text }}</view>
 		<view class="text">this is sub component</view>
 		<view class="num-list">
-			<view class="num-list-item" v-for="(item, index) in nums"> {{ item }} </view>
+			<view class="num-list-item" v-for="(item, index) in nums" :key="index"> {{ item }} </view>
 		</view>
 	</view>
 </template>
@@ -17,7 +17,7 @@
 			}
 		},
 		methods: {
-			addNum(num) {
+			addNum(num: number) {
 				this.nums.push(!isNaN(num) ? num : (this.nums.length + 1));
 			},
 			deleteNum() {

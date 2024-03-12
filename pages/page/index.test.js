@@ -85,17 +85,19 @@ describe(pageUrl, () => {
 		expect(fruit).toEqual(['龙眼'])
 	})
 
-	// TODO: 由于scroll-view组件的scrollWidth和scrollHeight是0，等框架修复后再测试
 	it('测试获取页面大小 page.size', async () => {
 		const pageSize = await page.size()
-		console.log(pageSize);
+		expect(pageSize.width).toBeGreaterThan(200)
+		expect(pageSize.height).toBeGreaterThan(800)
 	})
 
-	// TODO: 由于scroll-view组件的scrollTop是0，等框架修复后再测试
 	it('测试获取页面的滚动位置', async () => {
-		// await program.pageScrollTo(30)		
+		// await page.callMethod('pageScrollTo');
+		await page.setData({
+			scrollTop: 80
+		})
 		const scrollTop = await page.scrollTop()
-		console.log(scrollTop);
+		expect(scrollTop).toEqual(80)
 	})
 
 	it('测试调用方法', async () => {
