@@ -59,6 +59,12 @@
 		  "style": {
 		    "navigationBarTitleText": "swiper"
 		  }
+		},
+		{
+		  "path": "pages/slider/index",
+		  "style": {
+		    "navigationBarTitleText": "slider"
+		  }
 		}
   ],
   "tabBar": {

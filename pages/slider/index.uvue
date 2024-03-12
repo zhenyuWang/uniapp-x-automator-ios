@@ -1,0 +1,22 @@
+<template>
+	<view>
+		 <slider id="slider" :value="value"></slider>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				value: 20
+			}
+		},
+		methods: {
+			
+		}
+	}
+</script>
+
+<style>
+
+</style>
