@@ -23,4 +23,16 @@ describe(pageUrl, () => {
 		expect(await page.data('textareaValue')).toEqual('textarea first edit');
 	})
 	
+	it('trigger input', async () => {
+		const element = await page.$('#input')
+		await element.trigger('input', { value: 'second edit'})
+		expect(await element.value()).toEqual('second edit');
+	})
+	
+	it('trigger textarea input', async () => {
+		const element = await page.$('#textarea')
+		await element.trigger('input', { value: 'textarea second edit'})
+		expect(await element.value()).toEqual('textarea second edit');
+	})
+
 })
