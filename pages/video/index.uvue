@@ -1,0 +1,23 @@
+<template>
+	<view>
+		<video class="video" ref="video" id="video" :src="src" style="500rpx; height: 300rpx;">
+		</video>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				src: "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4",
+			}
+		},
+		methods: {
+
+		}
+	}
+</script>
+
+<style>
+
+</style>

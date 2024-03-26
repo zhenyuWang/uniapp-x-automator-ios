@@ -1,0 +1,26 @@
+<template>
+	<view>
+		{{ title }}
+		<view id="subview">subview</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				title: 'header'
+			}
+		},
+		methods: {
+			changeTitle(text: string) {
+				this.title = text;
+				return text;
+			}
+		}
+	}
+</script>
+
+<style>
+
+</style>
